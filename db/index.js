@@ -45,7 +45,7 @@ Purchase.init(
             type: DataTypes.DATE,
         },
     },
-    { timestamps: false, sequelize: db, modelName: "Purchase" },
+    { timestamps: false, sequelize: db, modelName: "Purchases" },
 );
 
 Purchase.belongsTo(Thing);
@@ -90,14 +90,14 @@ const init = async () => {
     }
 };
 
-init();
 
 module.exports = {
     db,
-    syncAndSeed,
+    init,
     models: {
         Person,
         Place,
         Thing,
+        Purchase,
     },
 };
